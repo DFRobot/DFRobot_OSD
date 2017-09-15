@@ -15,7 +15,7 @@ This is a Library for OSD,the function is the superposition of characters.And Yo
 
 ```C++
 
-#include <OSD.h>
+#include <DFRobot_OSD.h>
 //init OSD, CS is the selected pin
 void init(int CS);
 
