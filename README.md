@@ -42,4 +42,10 @@ void AT7456EString(unsigned char row, unsigned char col, unsigned char *s);
 void changeChar(unsigned short addr,int dt[]);
 
 ```
+##tool(Custom Chinese characters)
+* congfig <br>
+![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/config.png)
+
+* output <br>
+![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/putout.png)
 
