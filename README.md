@@ -16,29 +16,70 @@ This is a Library for OSD,the function is the superposition of characters.And Yo
 ```C++
 
 #include <DFRobot_OSD.h>
-//init OSD, CS is the selected pin
+/*
+ * @brief Select the selection pin
+ *
+ * @param CS is the selection pin
+ */
 void init(int CS);
 
-//Clear the characters on the screen
+/*
+ * @brief Clear the characters on the screen
+ */
 void clear(void);
 
-//display char of AT7456E's first page EEPROM library
-//row is range(0,15)  col is range(0,29)  c is address of char
+/*
+ * @brief display char of AT7456E's first page EEPROM library
+ *
+ * @param Row is the horizontal coordinate of the character, range(0,15)
+ *
+ * @param col is the vertical coordinate of the character, range(0,29)
+ *
+ * @param c is address of char
+ */
 void displayChar(unsigned char row, unsigned char col, unsigned char c);
 
-//display string,This string is composed of the character of the first page EEPROM font of AT7456E
+/*
+ * @brief display string,This string is composed of the character of the first page EEPROM font of AT7456E
+ *
+ * @param row is the horizontal coordinate of the character, range(0,15)
+ *
+ * @param col is the vertical coordinate of the character, range(0,29)
+ *
+ * @param s is string
+ */
 void displayString(unsigned char row, unsigned char col, unsigned char *s); 
-    
-//display char of AT7456E's first and second page EEPROM library
-//value is address of char
+
+/*
+ * @brief display char of AT7456E's first and second page EEPROM library
+ *
+ * @param row is the horizontal coordinate of the character, range(0,15)
+ *
+ * @param col is the vertical coordinate of the character, range(0,29)
+ *
+ * @param value is address of char
+ */
 void AT7456EChar(unsigned char row, unsigned char col, short value);
 
-//display string,This string is composed of the character of the all of  EEPROM font of AT7456E
-//the speed is slower than displayString
+/*
+ * @brief display string,This string is composed of the character of the all of character in EEPROM font of AT7456E,the speed is slower than displayString
+ *
+ * @param row is the horizontal coordinate of the character, range(0,15)
+ *
+ * @param col is the vertical coordinate of the character, range(0,29)
+ *
+ * @param s is string
+ */
 void AT7456EString(unsigned char row, unsigned char col, unsigned char *s);
-   
-//Write the custom character to the OSD, replacing the original character
+
 //dt[] is an array generated through the tool
+/*
+ * @brief Write the custom character to the OSD, replacing the original character
+ *
+ * @param addr is address of the stored character
+ *
+ * @param dt is an array generated through the tool
+ */
 void changeChar(unsigned short addr,int dt[]);
 
 ```
