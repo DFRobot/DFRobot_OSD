@@ -87,8 +87,6 @@ void changeChar(unsigned short addr,int dt[]);
 
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-firebeetle esp32  |      √       |             |            | 
-firebeetle esp8266  |      √       |             |            | 
 firebeetle board328p |      √       |             |            | 
 Leonardo |      √       |             |            | 
 
