@@ -82,6 +82,22 @@ void AT7456EString(unsigned char row, unsigned char col, unsigned char *s);
 void changeChar(unsigned short addr,int dt[]);
 
 ```
+
+## Compatibility
+
+MCU                | Work Well | Work Wrong | Untested  | Remarks
+------------------ | :----------: | :----------: | :---------: | -----
+firebeetle esp32  |      √       |             |            | 
+firebeetle esp8266  |      √       |             |            | 
+firebeetle board328p |      √       |             |            | 
+Leonardo |      √       |             |            | 
+
+## History
+
+- data 2017-9-27
+- version V1.0
+
+
 ## tool(Custom Chinese characters)
 * congfig <br>
 ![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/config.png)
