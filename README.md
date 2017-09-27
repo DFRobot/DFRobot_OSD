@@ -103,3 +103,6 @@ Leonardo |      √       |             |            |
 * output <br>
 ![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/putout.png)
 
+## Credits
+
+- author [Luyuhao  <yuhao.lu@dfrobot.com>]
