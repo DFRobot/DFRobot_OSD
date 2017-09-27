@@ -72,7 +72,6 @@ void AT7456EChar(unsigned char row, unsigned char col, short value);
  */
 void AT7456EString(unsigned char row, unsigned char col, unsigned char *s);
 
-//dt[] is an array generated through the tool
 /*
  * @brief Write the custom character to the OSD, replacing the original character
  *
