@@ -139,11 +139,9 @@ public:
     DFRobot_OSD(int CS);
     ~DFRobot_OSD();
     void init();
-    void displayChar(unsigned char row, unsigned char col, unsigned char c); 
-    void displayString(unsigned char row, unsigned char col, const char *s); 
+    void displayChar(unsigned char row, unsigned char col, unsigned char c);
+    void displayString(unsigned char row, unsigned char col, const char *s);
     void clear(void);
-    void AT7456EChar(unsigned char row, unsigned char col, short value);
-    void AT7456EString(unsigned char row, unsigned char col, const char *s);
     void changeChar(unsigned short addr,int dt[]);
 
 private:

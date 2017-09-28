@@ -16,48 +16,6 @@ void DFRobot_OSD::writeData(unsigned char value)
   digitalWrite(nCS ,HIGH); 
 }
 
-
-void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char *s) 
-{
-  unsigned int kk;    
-  unsigned char c;     
-  kk = row * 30 + col;   
-  writeAddrData(OSDBL,0X00);
-  writeAddrData(DMAH, kk / 256);   // address
-  writeAddrData(DMAL, kk % 256);   
-  writeAddrData(DMM, 0x01);       // Auto Inc
-  c = *s++;    
-  while (c != 0){
-        int i = 0;
-    for(i = 0;i < 34;i++){
-      if (c == tAsciiAddr[i].ascii){
-        writeData(tAsciiAddr[i].addr);
-      }
-    }
-    if ((c >= '0') && (c <='9'))
-      writeData((c == '0')? 10 : c - '1' + 1);
-    else if ((c >= 'A') && (c <= 'Z'))
-      writeData(c - 'A' + 11);
-    else if ((c >= 'a') && (c <= 'z'))
-      writeData(c - 'a' + 37);
-
-    c = *s++;
-  }    
-  writeData(0xff);                        // Exit Auto Inc 
-  writeAddrData(VM0, 0x48); 
-} 
-
-void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned char c)
-{
-  unsigned int kk; 
-  kk = row * 30 + col; 
-  writeAddrData(OSDBL,0X00);
-  writeAddrData(DMAH, kk / 256); // address 
-  writeAddrData(DMAL, kk % 256);
-  writeAddrData(DMDI, c);
-  writeAddrData(VM0, 0x48); 
-}
-
 void DFRobot_OSD::clear(void) 
 {
   unsigned int i; 
@@ -70,7 +28,7 @@ void DFRobot_OSD::clear(void)
   writeData(0xff); 
 }
 
-void DFRobot_OSD::AT7456EChar(unsigned char row, unsigned char col, short value) 
+void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, short value) 
 { 
   unsigned short k;
   unsigned char addrH, j; 
@@ -91,7 +49,7 @@ void DFRobot_OSD::AT7456EChar(unsigned char row, unsigned char col, short value)
   writeAddrData(VM0, 0x48); 
 }
 
-void DFRobot_OSD::AT7456EString(unsigned char row, unsigned char col, const char *s) 
+void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char *s) 
 {
   unsigned short k;
   unsigned char addrH, j; 

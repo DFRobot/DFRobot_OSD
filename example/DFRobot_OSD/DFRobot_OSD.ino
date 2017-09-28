@@ -23,17 +23,14 @@ void setup(){
   osd.displayChar(2,3,0xe1);
   osd.displayChar(2,4,0xe2);
   osd.displayChar(2,5,0xe3);
+  /*display character*/
+  osd.displayChar(9,9,0x11d);
+  osd.displayChar(9,10,0x11e);
+  osd.displayChar(8,11,0x10f);
   /*display String*/
   osd.displayString(14,21,"DFRobot");
   osd.displayString(2,19,"2017.9.12");
-  /*display character*/
-  osd.displayChar(12,25,0x16);
-  /*Displays the second page character */
-  osd.AT7456EChar(9,9,0x11d);
-  osd.AT7456EChar(9,10,0x11e);
-  osd.AT7456EChar(8,11,0x10f);
-  /*display char of AT7456E's first and second page EEPROM library*/
-  osd.AT7456EString(4,2,"hello world!");
+  osd.displayChar(4,2,"hello world!");
   
 }
 
