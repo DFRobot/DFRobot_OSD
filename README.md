@@ -23,11 +23,18 @@ This is a Library for OSD,the function is the superposition of characters.And Yo
 
 #include <DFRobot_OSD.h>
 /*
+ * @brief The constructor
+ *
+ * @param CS Selection pin
+ */
+DFRobot_OSD
+
+/*
  * @brief Init OSD
  *
  * @param CS Selection pin
  */
-void init(int CS);
+void init();
 
 /*
  * @brief Clear screen
@@ -51,24 +58,6 @@ void displayChar(unsigned char row, unsigned char col, unsigned char c);
  * @param s String
  */
 void displayString(unsigned char row, unsigned char col, unsigned char *s); 
-
-/*
- * @brief display char of AT7456E's first and second page EEPROM library
- *
- * @param row Horizontal coordinate, range(0,15)
- * @param col Vertical coordinate, range(0,29)
- * @param value Address of char
- */
-void AT7456EChar(unsigned char row, unsigned char col, short value);
-
-/*
- * @brief display string,all of character in EEPROM font of AT7456E
- *
- * @param row Horizontal coordinate, range(0,15)
- * @param col Vertical coordinate, range(0,29)
- * @param s String
- */
-void AT7456EString(unsigned char row, unsigned char col, unsigned char *s);
 
 /*
  * @brief Write the custom character to the OSD, replacing the original character
