@@ -25,9 +25,9 @@ This is a Library for OSD,the function is the superposition of characters.And Yo
 /*
  * @brief The constructor
  *
- * @param cs Selection pin
+ * @param CS Selection pin
  */
-DFRobot_OSD(int cs)
+DFRobot_OSD(int CS)
 
 /*
  * @brief Init OSD
