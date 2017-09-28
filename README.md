@@ -6,7 +6,7 @@ This is a Library for OSD,the function is the superposition of characters
 * [Methods](#methods)
 * [Compatibility](#compatibility)
 * [History](#history)
-* [Tool\(Custom Chinese characters\)](#tool\(Custom Chinese characters\))
+* [Tool\(Custom Chinese characters\)](#tool(Custom Chinese characters))
 * [Credits](#credits)
 
 <snippet>
