@@ -8,7 +8,7 @@ This is a Library for OSD,the function is the superposition of characters
 * [History](#history)
 * [Tool](#tool)
 * [Credits](#credits)
-* [eeprom font library](#eeprom font library)
+* [eeprom](#eeprom font library)
 
 <snippet>
 <content>
