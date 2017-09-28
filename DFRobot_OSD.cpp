@@ -1,7 +1,7 @@
 #include <SPI.h>
 #include <DFRobot_OSD.h>
 
-void OSD::writeAddrData(unsigned char addr, unsigned char value) 
+void DFRobot_OSD::writeAddrData(unsigned char addr, unsigned char value) 
 { 
   digitalWrite(nCS , LOW); 
   SPI.transfer(addr);
@@ -9,7 +9,7 @@ void OSD::writeAddrData(unsigned char addr, unsigned char value)
   digitalWrite(nCS ,HIGH); 
 }
 
-void OSD::writeData(unsigned char value) 
+void DFRobot_OSD::writeData(unsigned char value) 
 { 
   digitalWrite(nCS , LOW); 
   SPI.transfer(value);
@@ -17,37 +17,37 @@ void OSD::writeData(unsigned char value)
 }
 
 
-void OSD::displayString(unsigned char row, unsigned char col, unsigned char *s) 
+void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char *s) 
 {
   unsigned int kk;    
   unsigned char c;     
   kk = row * 30 + col;   
   writeAddrData(OSDBL,0X00);
-  writeAddrData(DMAH, kk / 256);   // address   
+  writeAddrData(DMAH, kk / 256);   // address
   writeAddrData(DMAL, kk % 256);   
-  writeAddrData(DMM, 0x01);       // Auto Inc      
+  writeAddrData(DMM, 0x01);       // Auto Inc
   c = *s++;    
   while (c != 0){
         int i = 0;
     for(i = 0;i < 34;i++){
       if (c == tAsciiAddr[i].ascii){
-	    writeData(tAsciiAddr[i].addr);
+        writeData(tAsciiAddr[i].addr);
       }
-    }	  
-    if ((c >= '0') && (c <='9'))          
-      writeData((c == '0')? 10 : c - '1' + 1);    
-    else if ((c >= 'A') && (c <= 'Z'))      
-      writeData(c - 'A' + 11);      
-    else if ((c >= 'a') && (c <= 'z'))        
-      writeData(c - 'a' + 37);      
-  
-    c = *s++;          
+    }
+    if ((c >= '0') && (c <='9'))
+      writeData((c == '0')? 10 : c - '1' + 1);
+    else if ((c >= 'A') && (c <= 'Z'))
+      writeData(c - 'A' + 11);
+    else if ((c >= 'a') && (c <= 'z'))
+      writeData(c - 'a' + 37);
+
+    c = *s++;
   }    
   writeData(0xff);                        // Exit Auto Inc 
   writeAddrData(VM0, 0x48); 
 } 
 
-void OSD::displayChar(unsigned char row, unsigned char col, unsigned char c)
+void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned char c)
 {
   unsigned int kk; 
   kk = row * 30 + col; 
@@ -58,7 +58,7 @@ void OSD::displayChar(unsigned char row, unsigned char col, unsigned char c)
   writeAddrData(VM0, 0x48); 
 }
 
-void OSD::clear(void) 
+void DFRobot_OSD::clear(void) 
 {
   unsigned int i; 
   writeAddrData(DMAH, 0x00); // address 
@@ -70,7 +70,7 @@ void OSD::clear(void)
   writeData(0xff); 
 }
 
-void OSD::AT7456EChar(unsigned char row, unsigned char col, short value) 
+void DFRobot_OSD::AT7456EChar(unsigned char row, unsigned char col, short value) 
 { 
   unsigned short k;
   unsigned char addrH, j; 
@@ -89,10 +89,9 @@ void OSD::AT7456EChar(unsigned char row, unsigned char col, short value)
   writeAddrData(DMAL, k); 
   writeAddrData(DMDI, value);
   writeAddrData(VM0, 0x48); 
-	
 }
 
-void OSD::AT7456EString(unsigned char row, unsigned char col, unsigned char *s) 
+void DFRobot_OSD::AT7456EString(unsigned char row, unsigned char col, const char *s) 
 {
   unsigned short k;
   unsigned char addrH, j; 
@@ -103,12 +102,12 @@ void OSD::AT7456EString(unsigned char row, unsigned char col, unsigned char *s)
   k = row * 30 + col; 
   writeAddrData(OSDBL,0X00);
   while (c != 0){
-	flag = 0;
+    flag = 0;
     int i = 0;
     for(i = 0;i < 34;i++){
       if (c == tAsciiAddr[i].ascii){
-	    value = tAsciiAddr[i].addr;
-		flag = 1;
+        value = tAsciiAddr[i].addr;
+        flag = 1;
       }
     }
     if(flag == 0){
@@ -139,9 +138,8 @@ void OSD::AT7456EString(unsigned char row, unsigned char col, unsigned char *s)
   writeAddrData(VM0, 0x48); 
 }
 
-void OSD::init(int CS)
+void DFRobot_OSD::init()
 {
-  nCS = CS;	
   pinMode(nCS,OUTPUT);
   SPI.begin();
   writeAddrData(VM0, 0x42);              // Software Reset, takes 100us, PAL/NTSC????   
@@ -150,17 +148,17 @@ void OSD::init(int CS)
   writeAddrData(OSDM, 0x00);  
 }
 
-OSD::OSD()
+DFRobot_OSD::DFRobot_OSD(int CS)
 {
-	
+  nCS = CS;
 }
 
-OSD::~OSD()
+DFRobot_OSD::~DFRobot_OSD()
 {
-	
+
 }
 
-void OSD::writeAT7456E(unsigned short addr, int *dt)
+void DFRobot_OSD::writeAT7456E(unsigned short addr, int *dt)
 { 
   unsigned char addrH, n;
   addrH = (addr >> 8); 
@@ -183,7 +181,7 @@ void OSD::writeAT7456E(unsigned short addr, int *dt)
   writeAddrData(VM0, 0x01<<3);
 } 
 
-void OSD::changeChar(unsigned short addr,int dt[])
+void DFRobot_OSD::changeChar(unsigned short addr,int dt[])
 {
   int buf[54] = {0};
   int i = 0;
@@ -191,15 +189,15 @@ void OSD::changeChar(unsigned short addr,int dt[])
   int *p;
   for(i = 0;i < 18;i++){
     p = extend(dt[i*2]);
-	buf[n++] = *p;
-	buf[n++] = *(p+1);
-	p = extend(dt[i*2+1]);
-	buf[n++] = *p;
+    buf[n++] = *p;
+    buf[n++] = *(p+1);
+    p = extend(dt[i*2+1]);
+    buf[n++] = *p;
   } 
  writeAT7456E(addr,buf);
 }
 
-int *OSD::extend(int src)
+int *DFRobot_OSD::extend(int src)
 {
   int i = 0;
   static int tar[2];
@@ -208,15 +206,15 @@ int *OSD::extend(int src)
   for(i = 0;i < 4;i++){
     if((src>>i) & 0x01){
       tar[0] = 0x02 |(tar[0]<< 2);
-	}
-	else
+    }
+    else
       tar[0] = 0x01|(tar[0]<< 2);
   }
   for(i = 4;i < 8;i++){
     if((src>>i) & 0x01){
       tar[1] = 0x02 | (tar[1] << 2);
-	}
-	else
+    }
+    else
       tar[1] = 0x01| (tar[1] << 2);
   }
  

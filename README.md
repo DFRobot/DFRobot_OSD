@@ -17,67 +17,58 @@ This is a Library for OSD,the function is the superposition of characters.And Yo
 
 #include <DFRobot_OSD.h>
 /*
- * @brief Select the selection pin
+ * @brief Init OSD
  *
- * @param CS is the selection pin
+ * @param CS Selection pin
  */
 void init(int CS);
 
 /*
- * @brief Clear the characters on the screen
+ * @brief Clear screen
  */
 void clear(void);
 
 /*
  * @brief display char of AT7456E's first page EEPROM library
  *
- * @param Row is the horizontal coordinate of the character, range(0,15)
- *
- * @param col is the vertical coordinate of the character, range(0,29)
- *
- * @param c is address of char
+ * @param row Horizontal coordinate, range(0,15)
+ * @param col Vertical coordinate, range(0,29)
+ * @param c Address of char
  */
 void displayChar(unsigned char row, unsigned char col, unsigned char c);
 
 /*
- * @brief display string,This string is composed of the character of the first page EEPROM font of AT7456E
+ * @brief display string,the first page EEPROM font of AT7456E
  *
- * @param row is the horizontal coordinate of the character, range(0,15)
- *
- * @param col is the vertical coordinate of the character, range(0,29)
- *
- * @param s is string
+ * @param row Horizontal coordinate, range(0,15)
+ * @param col Vertical coordinate, range(0,29)
+ * @param s String
  */
 void displayString(unsigned char row, unsigned char col, unsigned char *s); 
 
 /*
  * @brief display char of AT7456E's first and second page EEPROM library
  *
- * @param row is the horizontal coordinate of the character, range(0,15)
- *
- * @param col is the vertical coordinate of the character, range(0,29)
- *
- * @param value is address of char
+ * @param row Horizontal coordinate, range(0,15)
+ * @param col Vertical coordinate, range(0,29)
+ * @param value Address of char
  */
 void AT7456EChar(unsigned char row, unsigned char col, short value);
 
 /*
- * @brief display string,This string is composed of the character of the all of character in EEPROM font of AT7456E,the speed is slower than displayString
+ * @brief display string,all of character in EEPROM font of AT7456E
  *
- * @param row is the horizontal coordinate of the character, range(0,15)
- *
- * @param col is the vertical coordinate of the character, range(0,29)
- *
- * @param s is string
+ * @param row Horizontal coordinate, range(0,15)
+ * @param col Vertical coordinate, range(0,29)
+ * @param s String
  */
 void AT7456EString(unsigned char row, unsigned char col, unsigned char *s);
 
 /*
  * @brief Write the custom character to the OSD, replacing the original character
  *
- * @param addr is address of the stored character
- *
- * @param dt is an array generated through the tool
+ * @param addr Address of the stored character
+ * @param dt Array generated through the tool
  */
 void changeChar(unsigned short addr,int dt[]);
 
@@ -88,6 +79,8 @@ void changeChar(unsigned short addr,int dt[]);
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
 firebeetle board328p |      √       |             |            | 
+firebeetle esp32 |      √       |             |            | 
+firebeetle esp8266 |      √       |             |            | 
 Leonardo |      √       |             |            | 
 
 ## History
