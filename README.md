@@ -4,11 +4,12 @@ This is a Library for OSD,the function is the superposition of characters
 
 * [Summary](#summary)
 * [Methods](#methods)
+* [Eeprom](#eeprom)
 * [Compatibility](#compatibility)
 * [History](#history)
 * [Tool](#tool)
 * [Credits](#credits)
-* [Eeprom](#eeprom)
+
 
 <snippet>
 <content>
