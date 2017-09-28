@@ -31,8 +31,6 @@ DFRobot_OSD(int cs)
 
 /*
  * @brief Init OSD
- *
- * @param CS Selection pin
  */
 void init();
 
