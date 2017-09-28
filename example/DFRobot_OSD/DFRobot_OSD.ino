@@ -1,7 +1,7 @@
 #include <DFRobot_OSD.h>
 /*select CS pin*/
 int cs = 25;
-DFRobot_OSD obj(cs);
+DFRobot_OSD osd(cs);
 
 /*Define Chinese characters*/
 
@@ -11,29 +11,29 @@ int buf2[36] = {0x00,0x00,0x04,0x02,0xC4,0x03,0x44,0x02,0x5E,0x01,0x44,0x01,0x44
 int buf3[36] = {0x00,0x00,0x04,0x00,0xF4,0x01,0xAC,0x00,0xB4,0x07,0xA4,0x04,0xF4,0x05,0xAE,0x03,0xA4,0x02,0xE6,0x02,0xBA,0x06,0xE6,0x05,0xA6,0x01,0x86,0x00,0x89,0x00,0xF1,0x07,0x00,0x00,0x00,0x00};
 
 void setup(){
-  obj.init();
-  obj.clear();
+  osd.init();
+  osd.clear();
   /* Write the custom character to the OSD, replacing the original character*/
-  obj.changeChar(0xe0,buf0);
-  obj.changeChar(0xe1,buf1);
-  obj.changeChar(0xe2,buf2);
-  obj.changeChar(0xe3,buf3);
+  osd.changeChar(0xe0,buf0);
+  osd.changeChar(0xe1,buf1);
+  osd.changeChar(0xe2,buf2);
+  osd.changeChar(0xe3,buf3);
   /*Displays custom characters*/
-  obj.displayChar(2,2,0xe0);
-  obj.displayChar(2,3,0xe1);
-  obj.displayChar(2,4,0xe2);
-  obj.displayChar(2,5,0xe3);
+  osd.displayChar(2,2,0xe0);
+  osd.displayChar(2,3,0xe1);
+  osd.displayChar(2,4,0xe2);
+  osd.displayChar(2,5,0xe3);
   /*display String*/
-  obj.displayString(14,21,"DFRobot");
-  obj.displayString(2,19,"2017.9.12");
+  osd.displayString(14,21,"DFRobot");
+  osd.displayString(2,19,"2017.9.12");
   /*display character*/
-  obj.displayChar(12,25,0x16);
+  osd.displayChar(12,25,0x16);
   /*Displays the second page character */
-  obj.AT7456EChar(9,9,0x11d);
-  obj.AT7456EChar(9,10,0x11e);
-  obj.AT7456EChar(8,11,0x10f);
+  osd.AT7456EChar(9,9,0x11d);
+  osd.AT7456EChar(9,10,0x11e);
+  osd.AT7456EChar(8,11,0x10f);
   /*display char of AT7456E's first and second page EEPROM library*/
-  obj.AT7456EString(4,2,"hello world!");
+  osd.AT7456EString(4,2,"hello world!");
   
 }
 
