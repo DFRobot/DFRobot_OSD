@@ -8,7 +8,7 @@ This is a Library for OSD,the function is the superposition of characters
 * [History](#history)
 * [Tool](#tool)
 * [Credits](#credits)
-* [eeprom](#eeprom font library)
+* [eeprom font library](#eeprom font library)
 
 <snippet>
 <content>
@@ -80,10 +80,10 @@ void changeChar(unsigned short addr,int dt[]);
 ```
 
 ## eeprom font library
-page 1:
+page 1:  <br>
 ![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/eeprom1.png)
 
-page 2:
+page 2:  <br>
 ![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/eeprom2.png)
 
 
