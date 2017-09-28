@@ -4,6 +4,10 @@ This is a Library for OSD,the function is the superposition of characters
 
 * [Summary](#summary)
 * [Methods](#methods)
+* [Compatibility](#compatibility)
+* [History](#history)
+* [Tool](#tool)
+* [Credits](#credits)
 
 <snippet>
 <content>
@@ -89,7 +93,7 @@ Leonardo |      √       |             |            |
 - version V1.0
 
 
-## tool(Custom Chinese characters)
+## Tool(Custom Chinese characters)
 * congfig <br>
 ![image](https://github.com/DFRobot/DFRobot_OSD/blob/master/image/config.png)
 
