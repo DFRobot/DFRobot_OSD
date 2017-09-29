@@ -30,7 +30,7 @@ void setup(){
   /*display String*/
   osd.displayString(14,21,"DFRobot");
   osd.displayString(2,19,"2017.9.12");
-  osd.displayChar(4,2,"hello world!");
+  osd.displayString(4,2,"hello world!");
   
 }
 
