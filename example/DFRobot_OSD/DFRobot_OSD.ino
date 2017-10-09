@@ -1,3 +1,15 @@
+ /*!
+  * file DFRobot_OSD.ino
+  * character superimposition.
+  * @n This example Set characters on the screen.
+  *
+  * Copyright   [DFRobot](http://www.dfrobot.com), 2016
+  * Copyright   GNU Lesser General Public License
+  *
+  * version  V1.0
+  * date  2017-10-9
+  */
+
 #include <DFRobot_OSD.h>
 /*select CS pin*/
 int cs = 25;
