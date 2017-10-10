@@ -79,9 +79,9 @@ page 2:  <br>
 
 MCU                | Work Well | Work Wrong | Untested  | Remarks
 ------------------ | :----------: | :----------: | :---------: | -----
-firebeetle board328p |      √       |             |            | 
-firebeetle esp32 |      √       |             |            | 
-firebeetle esp8266 |      √       |             |            | 
+FireBeetle-Board328p |      √       |             |            | 
+FireBeetle-ESP32 |      √       |             |            | 
+FireBeetle-ESP8266 |      √       |             |            | 
 Leonardo |      √       |             |            | 
 
 ## History
