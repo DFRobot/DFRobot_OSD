@@ -142,7 +142,7 @@ public:
     void displayChar(unsigned char row, unsigned char col,short value);
     void displayString(unsigned char row, unsigned char col, const char *s);
     void clear(void);
-    void changeChar(unsigned short addr,int dt[]);
+    void storeChar(unsigned short addr,int dt[]);
 
 private:
     void writeAddrData(unsigned char addr, unsigned char dat); 

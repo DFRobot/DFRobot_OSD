@@ -18,7 +18,7 @@ clear	KEYWORD2
 AT7456EChar	KEYWORD2
 AT7456EString	KEYWORD2
 writeAT7456E	KEYWORD2
-changeChar	KEYWORD2
+storeChar	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

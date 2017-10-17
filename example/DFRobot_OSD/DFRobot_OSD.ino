@@ -36,10 +36,10 @@ void setup(){
   osd.init();
   osd.clear();
   /* Write the custom character to the OSD, replacing the original character*/
-  osd.changeChar(0xe0,buf0);
-  osd.changeChar(0xe1,buf1);
-  osd.changeChar(0xe2,buf2);
-  osd.changeChar(0xe3,buf3);
+  osd.storeChar(0xe0,buf0);
+  osd.storeChar(0xe1,buf1);
+  osd.storeChar(0xe2,buf2);
+  osd.storeChar(0xe3,buf3);
   /*Displays custom characters*/
   osd.displayChar(2,2,0xe0);
   osd.displayChar(2,3,0xe1);

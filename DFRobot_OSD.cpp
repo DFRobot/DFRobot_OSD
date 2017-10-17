@@ -139,7 +139,7 @@ void DFRobot_OSD::writeAT7456E(unsigned short addr, int *dt)
   writeAddrData(VM0, 0x01<<3);
 } 
 
-void DFRobot_OSD::changeChar(unsigned short addr,int dt[])
+void DFRobot_OSD::storeChar(unsigned short addr,int dt[])
 {
   int buf[54] = {0};
   int i = 0;
