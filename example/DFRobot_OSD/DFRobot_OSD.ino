@@ -11,8 +11,18 @@
   */
 
 #include <DFRobot_OSD.h>
+
 /*select CS pin*/
-int cs = 25;
+#ifdef __AVR__
+int cs = 3;
+#elif defined ESP_PLATFORM
+int cs = D3;
+#elif defined __ets__
+int cs = D3;
+#else
+  #error unknow board
+#endif
+
 DFRobot_OSD osd(cs);
 
 /*Define Chinese characters*/
