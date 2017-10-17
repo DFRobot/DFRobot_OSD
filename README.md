@@ -66,7 +66,7 @@ void displayString(unsigned char row, unsigned char col, unsigned char *s);
  * @param addr Address of the stored character
  * @param dt Array generated through the tool
  */
-void changeChar(unsigned short addr,int dt[]);
+void storeChar(unsigned short addr,int dt[]);
 
 ```
 
