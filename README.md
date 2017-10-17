@@ -47,9 +47,9 @@ void clear(void);
  *
  * @param row Horizontal coordinate, range(0,15)
  * @param col Vertical coordinate, range(0,29)
- * @param c Address of char
+ * @param value Address of char
  */
-void displayChar(unsigned char row, unsigned char col, unsigned char c);
+void displayChar(unsigned char row, unsigned char col, short value);
 
 /*
  * @brief display string,the first page EEPROM font of AT7456E
