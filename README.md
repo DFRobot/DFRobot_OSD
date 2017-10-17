@@ -61,6 +61,15 @@ void displayChar(unsigned char row, unsigned char col, unsigned char c);
 void displayString(unsigned char row, unsigned char col, unsigned char *s); 
 
 /*
+ * @brief display string,the first page EEPROM font of AT7456E
+ *
+ * @param row Horizontal coordinate, range(0,15)
+ * @param col Vertical coordinate, range(0,29)
+ * @param s String
+ */
+void displayString(unsigned char row, unsigned char col, String s); 
+
+/*
  * @brief Write the custom character to the OSD, replacing the original character
  *
  * @param addr Address of the stored character
