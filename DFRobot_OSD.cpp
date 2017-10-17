@@ -69,12 +69,12 @@ void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char
       }
     }
     if(flag == 0){
-      if ((c >= '0') && (c <='9'))          
-        value = ((c == '0')? 10 : c - '1' + 1);    
-      else if ((c >= 'A') && (c <= 'Z'))      
-        value = (c - 'A' + 11);      
-      else if ((c >= 'a') && (c <= 'z'))        
-        value = (c - 'a' + 37);      
+      if ((c >= '0') && (c <='9'))
+        value = ((c == '0')? 10 : c - '1' + 1);
+      else if ((c >= 'A') && (c <= 'Z'))
+        value = (c - 'A' + 11);
+      else if ((c >= 'a') && (c <= 'z'))
+        value = (c - 'a' + 37);
       else
         value = (0x00);
     }
@@ -92,8 +92,14 @@ void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char
     writeAddrData(DMDI, value);
     c = *s++;
     k = k+1;
-  }    
+  }
   writeAddrData(VM0, 0x48); 
+}
+
+void DFRobot_OSD::displayString(unsigned char row, unsigned char col, String s)
+{
+  const char *str = s.c_str();
+  displayString(row,col,str);
 }
 
 void DFRobot_OSD::init()

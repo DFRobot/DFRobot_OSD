@@ -51,8 +51,11 @@ void setup(){
   osd.displayChar(9,10,0x11e);
   osd.displayChar(8,11,0x10f);
   /*display String*/
-  osd.displayString(14,21,"DFRobot");
-  osd.displayString(2,19,"2017.9.12");
+  const char* str1 = "DFRobot";
+  String str2 = "2017.9.12";
+  
+  osd.displayString(14,21,str1);
+  osd.displayString(2,19,str2);
   osd.displayString(4,2,"hello world!");
   
 }

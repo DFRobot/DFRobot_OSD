@@ -141,8 +141,10 @@ public:
     void init();
     void displayChar(unsigned char row, unsigned char col,short value);
     void displayString(unsigned char row, unsigned char col, const char *s);
+    void displayString(unsigned char row, unsigned char col, String s);
     void clear(void);
     void storeChar(unsigned short addr,int dt[]);
+
 
 private:
     void writeAddrData(unsigned char addr, unsigned char dat); 
