@@ -43,7 +43,7 @@ void init();
 void clear(void);
 
 /*
- * @brief display char of AT7456E's first page EEPROM library
+ * @brief display char
  *
  * @param row Horizontal coordinate, range(0,15)
  * @param col Vertical coordinate, range(0,29)
@@ -52,7 +52,7 @@ void clear(void);
 void displayChar(unsigned char row, unsigned char col, short value);
 
 /*
- * @brief display string,the first page EEPROM font of AT7456E
+ * @brief display string
  *
  * @param row Horizontal coordinate, range(0,15)
  * @param col Vertical coordinate, range(0,29)
