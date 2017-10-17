@@ -36,6 +36,7 @@ void setup(){
   osd.init();
   osd.clear();
   /* Write the custom character to the OSD, replacing the original character*/
+  /* Expand 0xe0 to 0x0e0, the high 8 bits indicate page number and the low 8 bits indicate the inpage address.*/
   osd.storeChar(0xe0,buf0);
   osd.storeChar(0xe1,buf1);
   osd.storeChar(0xe2,buf2);
