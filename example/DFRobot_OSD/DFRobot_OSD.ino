@@ -53,11 +53,12 @@ void setup(){
   /*display String*/
   const char* str1 = "DFRobot";
   String str2 = "2017.9.12";
+  String str3(3.14);
   
   osd.displayString(14,21,str1);
   osd.displayString(2,19,str2);
+  osd.displayString(4,19,str3); 
   osd.displayString(4,2,"hello world!");
-  
 }
 
 void loop(){

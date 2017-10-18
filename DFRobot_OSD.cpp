@@ -40,12 +40,12 @@ void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned sho
   writeAddrData(DMAH, addrH | 0x2);
   writeAddrData(DMAL, k); 
   j = CHAR_LBC << 5; 
-  if ((value >> 8) != 0)
+  if ((addr >> 8) != 0)
     j |= 0x10; 
   writeAddrData(DMDI, j);
   writeAddrData(DMAH, addrH); 
   writeAddrData(DMAL, k); 
-  writeAddrData(DMDI, value);
+  writeAddrData(DMDI, addr);
   writeAddrData(VM0, 0x48); 
 }
 
