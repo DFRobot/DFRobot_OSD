@@ -139,7 +139,7 @@ public:
     DFRobot_OSD(int CS);
     ~DFRobot_OSD();
     void init();
-    void displayChar(unsigned char row, unsigned char col,short value);
+    void displayChar(unsigned char row, unsigned char col, unsigned short addr);
     void displayString(unsigned char row, unsigned char col, const char *s);
     void displayString(unsigned char row, unsigned char col, String s);
     void clear(void);

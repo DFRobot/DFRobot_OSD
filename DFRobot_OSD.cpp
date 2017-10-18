@@ -28,7 +28,7 @@ void DFRobot_OSD::clear(void)
   writeData(0xff); 
 }
 
-void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, short value) 
+void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned short addr) 
 { 
   unsigned short k;
   unsigned char addrH, j; 

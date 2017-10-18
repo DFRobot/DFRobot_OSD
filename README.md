@@ -47,9 +47,9 @@ void clear(void);
  *
  * @param row Horizontal coordinate, range(0,15)
  * @param col Vertical coordinate, range(0,29)
- * @param value Address of char
+ * @param value addr of char in eeprom
  */
-void displayChar(unsigned char row, unsigned char col, short value);
+void displayChar(unsigned char row, unsigned char col, unsigned short addr);
 
 /*
  * @brief display string
