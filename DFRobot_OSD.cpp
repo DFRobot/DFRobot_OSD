@@ -1,23 +1,20 @@
 #include <SPI.h>
 #include <DFRobot_OSD.h>
 
-void DFRobot_OSD::writeAddrData(unsigned char addr, unsigned char value) 
-{ 
+void DFRobot_OSD::writeAddrData(unsigned char addr, unsigned char value){ 
   digitalWrite(nCS , LOW); 
   SPI.transfer(addr);
   SPI.transfer(value);
   digitalWrite(nCS ,HIGH); 
 }
 
-void DFRobot_OSD::writeData(unsigned char value) 
-{ 
+void DFRobot_OSD::writeData(unsigned char value){ 
   digitalWrite(nCS , LOW); 
   SPI.transfer(value);
   digitalWrite(nCS ,HIGH); 
 }
 
-void DFRobot_OSD::clear(void) 
-{
+void DFRobot_OSD::clear(void){
   unsigned int i; 
   writeAddrData(DMAH, 0x00); // address 
   writeAddrData(DMAL, 0); 
@@ -28,8 +25,7 @@ void DFRobot_OSD::clear(void)
   writeData(0xff); 
 }
 
-void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned short addr) 
-{ 
+void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned short addr){ 
   unsigned short k;
   unsigned char addrH, j; 
 
@@ -49,8 +45,7 @@ void DFRobot_OSD::displayChar(unsigned char row, unsigned char col, unsigned sho
   writeAddrData(VM0, 0x48); 
 }
 
-void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char *s) 
-{
+void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char *s){
   unsigned short k;
   unsigned char addrH, j; 
   unsigned char c;
@@ -96,14 +91,12 @@ void DFRobot_OSD::displayString(unsigned char row, unsigned char col, const char
   writeAddrData(VM0, 0x48); 
 }
 
-void DFRobot_OSD::displayString(unsigned char row, unsigned char col, String s)
-{
+void DFRobot_OSD::displayString(unsigned char row, unsigned char col, String s){
   const char *str = s.c_str();
   displayString(row,col,str);
 }
 
-void DFRobot_OSD::init()
-{
+void DFRobot_OSD::init(){
   pinMode(nCS,OUTPUT);
   SPI.begin();
   writeAddrData(VM0, 0x42);              // Software Reset, takes 100us, PAL/NTSC????   
@@ -112,18 +105,15 @@ void DFRobot_OSD::init()
   writeAddrData(OSDM, 0x00);  
 }
 
-DFRobot_OSD::DFRobot_OSD(int CS)
-{
+DFRobot_OSD::DFRobot_OSD(int CS){
   nCS = CS;
 }
 
-DFRobot_OSD::~DFRobot_OSD()
-{
+DFRobot_OSD::~DFRobot_OSD(){
 
 }
 
-void DFRobot_OSD::writeAT7456E(unsigned short addr, int *dt)
-{ 
+void DFRobot_OSD::writeAT7456E(unsigned short addr, int *dt){ 
   unsigned char addrH, n;
   addrH = (addr >> 8); 
 
@@ -145,12 +135,19 @@ void DFRobot_OSD::writeAT7456E(unsigned short addr, int *dt)
   writeAddrData(VM0, 0x01<<3);
 } 
 
-void DFRobot_OSD::storeChar(unsigned short addr,int dt[])
-{
+void DFRobot_OSD::storeChar(unsigned short addr,int temp[]){
   int buf[54] = {0};
+  int dt[54] = {0};
   int i = 0;
   int n = 0;
   int *p;
+  for(i = 0;i < 54;i++){
+    if(i < 8){
+      dt[i] = 0;
+    }
+    else
+      dt[i] = temp[i-8];
+  }
   for(i = 0;i < 18;i++){
     p = extend(dt[i*2]);
     buf[n++] = *p;
@@ -161,9 +158,9 @@ void DFRobot_OSD::storeChar(unsigned short addr,int dt[])
  writeAT7456E(addr,buf);
 }
 
-int *DFRobot_OSD::extend(int src)
-{
+int *DFRobot_OSD::extend(int src){
   int i = 0;
+  src = unified(src);
   static int tar[2];
   tar[0] = 0;
   tar[1] = 0;
@@ -181,6 +178,14 @@ int *DFRobot_OSD::extend(int src)
     else
       tar[1] = 0x01| (tar[1] << 2);
   }
- 
   return tar;
+}
+
+int DFRobot_OSD::unified(int src){
+  int num = 0;
+  int i = 0;
+  for(i = 0;i<8;i++){
+    num = (num << 1)|((src >> i)&0x01);
+  }
+  return num;
 }

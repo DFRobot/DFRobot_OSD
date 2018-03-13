@@ -151,6 +151,7 @@ private:
     void writeAT7456E(unsigned short addr, int *dt);
     void writeData(unsigned char dat); 
     int *extend(int src);
+    int unified(int src);
     int nCS;
 };
 
