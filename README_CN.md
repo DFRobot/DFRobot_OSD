@@ -30,7 +30,7 @@ OSD是On-screen Display的简称，即屏幕菜单式调节方式。这是一种
 这里有2种安装方法：
 
 1. 使用此库前，请首先下载库文件，将其粘贴到\Arduino\libraries目录中，然后打开examples文件夹并在该文件夹中运行演示。
-2. 直接在Arduino软件库管理中搜索下载 DFRobot_SCD4X 库。
+2. 直接在Arduino软件库管理中搜索下载 DFRobot_OSD 库。
 
 
 ## 方法

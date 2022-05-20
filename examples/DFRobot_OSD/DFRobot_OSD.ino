@@ -8,7 +8,7 @@
  * @maintainer  [qsjhyy](yihuan.huang@dfrobot.com)
  * @version  V1.0
  * @date  2017-10-09
- * @url  https://github.com/DFRobot/DFRobot_SCD4X
+ * @url  https://github.com/DFRobot/DFRobot_OSD
  */
 #include <DFRobot_OSD.h>
 
