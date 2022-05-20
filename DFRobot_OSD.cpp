@@ -1,3 +1,15 @@
+/*!
+ * @file  DFRobot_OSD.cpp
+ * @brief  Define the infrastructure DFRobot_OSD class
+ * @details  This is a Library for OSD,the function is the superposition of characters.
+ * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license  The MIT License (MIT)
+ * @author  [Luyuhao](yuhao.lu@dfrobot.com)
+ * @maintainer  [qsjhyy](yihuan.huang@dfrobot.com)
+ * @version  V1.0
+ * @date  2022-05-19
+ * @url  https://github.com/DFRobot/DFRobot_OSD
+ */
 #include <SPI.h>
 #include <DFRobot_OSD.h>
 
@@ -99,10 +111,10 @@ void DFRobot_OSD::displayString(unsigned char row, unsigned char col, String s){
 void DFRobot_OSD::init(){
   pinMode(nCS,OUTPUT);
   SPI.begin();
-  writeAddrData(VM0, 0x42);              // Software Reset, takes 100us, PAL/NTSC????   
-  writeAddrData(DMAH, 0x00);             // address
-  writeAddrData(DMAL, 68);    
-  writeAddrData(OSDM, 0x00);  
+  writeAddrData(VM0, 0x42);   // Software Reset, takes 100us, PAL/NTSC????
+  writeAddrData(DMAH, 0x00);   // address
+  writeAddrData(DMAL, 68);
+  writeAddrData(OSDM, 0x00);
 }
 
 DFRobot_OSD::DFRobot_OSD(int CS){

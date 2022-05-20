@@ -15,10 +15,8 @@ init	KEYWORD2
 displayChar	KEYWORD2
 displayString	KEYWORD2
 clear	KEYWORD2
-AT7456EChar	KEYWORD2
-AT7456EString	KEYWORD2
-writeAT7456E	KEYWORD2
 storeChar	KEYWORD2
+writeAT7456E	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)

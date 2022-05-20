@@ -1,15 +1,15 @@
- /*!
-  * file DFRobot_OSD.ino
-  * character superimposition.
-  * @n This example Set characters on the screen.
-  *
-  * Copyright   [DFRobot](http://www.dfrobot.com), 2016
-  * Copyright   GNU Lesser General Public License
-  *
-  * version  V1.0
-  * date  2017-10-9
-  */
-
+/*!
+ * @file  periodMeasure.ino
+ * @brief  character superimposition.
+ * @n  This example Set characters on the screen.
+ * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license  The MIT License (MIT)
+ * @author  [Luyuhao](yuhao.lu@dfrobot.com)
+ * @maintainer  [qsjhyy](yihuan.huang@dfrobot.com)
+ * @version  V1.0
+ * @date  2017-10-09
+ * @url  https://github.com/DFRobot/DFRobot_SCD4X
+ */
 #include <DFRobot_OSD.h>
 
 /*select CS pin*/

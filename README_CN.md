@@ -1,43 +1,39 @@
 # DFRobot_OSD
-* [中文版](./README_CN.md)
+* [English Version](./README.md)
 
-OSD is the abbreviation of On-screen Display, this is a screen menu adjustment display technology to add different menu-style characters on the screen display.
-
-FireBeetle OSD Character Overlay Module is a new product presented by DFRobot. It adopts AT7456E OSD chip. This is a single-channel OSD module, equipped with functions like video drive, sync separator, video separate switch, etc. It comes with 512 bytes EEPROM user-defined storage space. After connected to video sources (AV Signals), the display covers 540x192 pixels which can show 16x30 characters on the screen. Users can also call font library to show characters and images.
-
-This FireBeetle OSD Character Overlay Module is compatible with FireBeetle series interfaces and can be directly plugged into FireBeetle mainboards. This module can be widely applied to device character display and time display of monitor device such as road cameras, home automation.
+OSD是On-screen Display的简称，即屏幕菜单式调节方式。这是一种在屏幕上附加各类菜单式字符的技术。DFRobot新推出的OSD视频字符叠加模块，采用AT7456E高性能视频字符叠加芯片，该芯片集成了512Byte的EEPROM用户自定义存储空间，是一款单通道、单色随屏显示发生器，具备视频驱动、同步分离器、视频分离开关等功能。在接入视频源后（AV信号），可在视频上覆盖一层540x192像素点，可显示16x30个字符。用户可调取字库来显示相应文字或图案。 Firebeetle OSD字符叠加模块，兼容FireBeetle萤火虫接口，可以直接插接在FireBeetle萤火虫系列主板上。
 
 ![产品实物图](./resources/images/OSD.png)
 
 
-## Product Link (https://www.dfrobot.com/product-1700.html)
+## 产品链接 (https://www.dfrobot.com.cn/goods-1604.html)
     SKU: DFR0515
 
 
-## Table of Contents
+## 目录
 
-* [Summary](#summary)
-* [Installation](#installation)
-* [Methods](#methods)
-* [Compatibility](#compatibility)
-* [History](#history)
-* [Credits](#credits)
-
-
-## Summary
-
-* This is a Library for OSD,the function is the superposition of characters.And You can display certain characters on screen.
+* [概述](#概述)
+* [库安装](#库安装)
+* [方法](#方法)
+* [兼容性](#兼容性)
+* [历史](#历史)
+* [创作者](#创作者)
 
 
-## Installation
+## 概述
 
-There two methods:
-
-1. To use this library, first download the library file, paste it into the \Arduino\libraries directory, then open the examples folder and run the demo in the folder.
-2. Search the DFRobot_SCD4X library from the Arduino Software Library Manager and download it.
+* 这是一个用于OSD的库，函数是字符的叠加。你可以在屏幕上显示某些字符
 
 
-## Methods
+## 库安装
+
+这里有2种安装方法：
+
+1. 使用此库前，请首先下载库文件，将其粘贴到\Arduino\libraries目录中，然后打开examples文件夹并在该文件夹中运行演示。
+2. 直接在Arduino软件库管理中搜索下载 DFRobot_SCD4X 库。
+
+
+## 方法
 
 ```C++
 
@@ -97,7 +93,7 @@ There two methods:
 ```
 
 
-## Compatibility
+## 兼容性
 
 MCU                  | Work Well    | Work Wrong   | Untested    | Remarks
 -------------------- | :----------: | :----------: | :---------: | :----:
@@ -107,12 +103,12 @@ FireBeetle-ESP32     |      √       |              |             |
 Arduino Leonardo     |      √       |              |             |
 
 
-## History
+## 历史
 
-- 2017-9-27 - Version 1.0.0 released.
+- 2017-9-27 - 1.0.0 版本
 
 
-## Credits
+## 创作者
 
 Written by Luyuhao(yuhao.lu@dfrobot.com), 2017. (Welcome to our [website](https://www.dfrobot.com/))
 
